@@ -1,4 +1,6 @@
 const products = [];
+const blob = new Blob(["\uFEFF" + jsonStr], { type: "application/json;charset=utf-8;" });
+
 
 function addProduct() {
     const id = document.getElementById("productId").value.trim();
@@ -55,4 +57,9 @@ function downloadJSON() {
     a.click();
     document.body.removeChild(a); // เอาออกหลังคลิก
     URL.revokeObjectURL(url);
+}
+
+function viewJSON() {
+    const jsonStr = JSON.stringify(products, null, 2);
+    document.getElementById("jsonView").textContent = jsonStr;
 }
