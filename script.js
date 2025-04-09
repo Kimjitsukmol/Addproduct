@@ -1,7 +1,4 @@
 const products = [];
-const blob = new Blob(["\uFEFF" + jsonStr], { type: "application/json;charset=utf-8;" });
-
-
 function addProduct() {
     const id = document.getElementById("productId").value.trim();
     const name = document.getElementById("productName").value.trim();
