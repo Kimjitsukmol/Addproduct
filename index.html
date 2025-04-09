@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+
+<body>
+    <h2>ระบบคีย์ข้อมูลสินค้า</h2>
+
+    <input id="productId" placeholder="รหัสสินค้า">
+    <input id="productName" placeholder="ชื่อสินค้า">
+    <input id="sellPrice" type="number" placeholder="ราคาขาย">
+    <button onclick="addProduct()">เพิ่มสินค้า</button>
+    <button onclick="downloadJSON()">บันทึกเป็น JSON</button>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th>ราคาขาย</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+<script src="script.js"></script>
+</body>
+
+</html>
