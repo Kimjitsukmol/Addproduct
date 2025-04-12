@@ -59,6 +59,38 @@ function downloadJSON() {
 }
 
 function viewJSON() {
-    const jsonStr = JSON.stringify(products, null, 2);
+    if (products.length === 0) {
+        document.getElementById("jsonView").textContent = "ยังไม่มีข้อมูลสินค้า";
+        document.getElementById("copyBtn").style.display = "none";
+        return;
+    }
+
+    // สร้าง JSON แบบไม่มี [] และมี , หลัง } ทุกตัว
+    let jsonItems = products.map(p => JSON.stringify(p, null, 2));
+    let jsonStr = jsonItems.join(",\n") + ","; // เพิ่ม , ท้ายสุด
+
     document.getElementById("jsonView").textContent = jsonStr;
+
+    // แสดงปุ่มคัดลอก
+    document.getElementById("copyBtn").style.display = "inline-block";
 }
+
+
+
+function copyJSON() {
+    if (products.length === 0) {
+        alert("ยังไม่มีข้อมูลให้คัดลอก");
+        return;
+    }
+
+    let jsonItems = products.map(p => JSON.stringify(p, null, 2));
+    let jsonStr = jsonItems.join(",\n") + ","; // เพิ่ม , ท้ายสุด
+
+    navigator.clipboard.writeText(jsonStr).then(() => {
+        // alert("คัดลอก JSON สำเร็จแล้ว!");
+    }).catch(err => {
+        alert("ไม่สามารถคัดลอกได้: " + err);
+    });
+}
+
+
