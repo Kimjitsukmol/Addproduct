@@ -62,7 +62,7 @@ function viewJSON() {
     if (products.length === 0) {
         document.getElementById("jsonView").textContent = "ยังไม่มีข้อมูลสินค้า";
         document.getElementById("copyBtn").style.display = "none";
-        document.getElementById("githubBtn").style.display = "inline-block";
+        document.getElementById("githubBtn").style.display = "none";
         return;
     }
 
