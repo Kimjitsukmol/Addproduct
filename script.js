@@ -73,6 +73,8 @@ function viewJSON() {
 
     // แสดงปุ่มคัดลอก
     document.getElementById("copyBtn").style.display = "inline-block";
+    document.getElementById("githubBtn").style.display = "inline-block";
+
 }
 
 
