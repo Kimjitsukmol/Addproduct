@@ -11,15 +11,15 @@
 <body>
     <h2>ระบบคีย์ข้อมูลสินค้า</h2>
 
-    <input id="productId" type="number" placeholder="รหัสสินค้า">
+    <input id="productId" type="numeric" pattern="[0-9]*" placeholder="รหัสสินค้า">
     <input id="productName" placeholder="ชื่อสินค้า">
     <input id="sellPrice" type="number" placeholder="ราคาขาย">
     <button onclick="addProduct()">เพิ่มสินค้า</button>
-    <button onclick="downloadJSON()">บันทึกเป็น JSON</button>
-    <button onclick="viewJSON()">ดูข้อมูล JSON</button>
+    <button onclick="downloadJSON()">บันทึก</button>
+    <button onclick="viewJSON()">ดูข้อมูล</button>
     
     <pre id="jsonView"></pre>
-    <button id="copyBtn" onclick="copyJSON()" style="display: none;">คัดลอก JSON</button>
+    <button id="copyBtn" onclick="copyJSON()" style="display: none;">คัดลอก</button>
 
 
     <table id="productTable">
